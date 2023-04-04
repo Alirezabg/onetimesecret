@@ -30,7 +30,9 @@
 #     onetimesecret
 
 FROM ruby:2.6
+RUN useradd -ms /bin/bash ots && mkdir -p /usr/src/app && chown ots:ots /usr/src/app
 
+USER ots
 WORKDIR /usr/src/app
 COPY Gemfile ./
 
