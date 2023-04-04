@@ -121,6 +121,16 @@
   <div class="masthead">
     <div class="nav pull-right">
 
+      {{^authenticated}}
+        {{#is_subdomain}}
+        <a href="{{baseotsuri}}/" title="Go to One-Time Secret">Go to onetimesecret.com</a>
+        {{/is_subdomain}}
+        {{^is_subdomain}}
+        <a href="#" class="active">Create an account</a> |
+        <a href="#">Blog</a> |
+        <a href="#">Sign In</a>
+        {{/is_subdomain}}
+      {{/authenticated}}
 
       {{#authenticated}}
         <span class="lighter">{{cust.custid}}</span>{{#colonel}}<a href="{{baseotsuri}}/colonel/" title="" class="nounderline">*</a>{{/colonel}} -
@@ -184,7 +194,16 @@
     </form>
     {{/display_feedback}}
     <p>
-
+      <a href="{{baseotsuri}}/about">About</a> |
+      <a href="{{baseotsuri}}/docs/api">API</a> |
+      <a href="https://github.com/onetimesecret/onetimesecret">Code</a> |
+      <a href="https://github.com/onetimesecret/onetimesecret/issues" title="Issue Tracker">Issues</a> |
+      <a href="http://blog.onetimesecret.com/">Blog</a>
+    </p>
+    <p>
+      <a href="{{baseotsuri}}/info/privacy">Privacy</a> |
+      <a href="{{baseotsuri}}/info/terms">Terms &amp; Conditions</a> |
+      <a href="{{baseotsuri}}/info/security">Security</a>
     </p>
     {{#display_icons}}
     <div class="tagline">
